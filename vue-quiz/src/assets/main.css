@@ -1,0 +1,67 @@
+@import './base.css';
+
+body {
+  background-image: url('background.jpg');
+  background-color: #222222;
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Don't repeat the image */
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 0);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+
+    flex-direction: column; /* Change to column layout */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  #app {
+
+    grid-template-areas:
+      "header"
+      "body"
+      "footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  header {
+    grid-area: header;
+    /* Adjust header styles */
+  }
+
+  main {
+    grid-area: body;
+    /* Adjust body content styles */
+  }
+
+  footer {
+    grid-area: footer;
+    /* Adjust footer styles */
+}
+}
